@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link href="../static/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <title>Predict Service</title>
+  <style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  align-content: center;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 20px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.animate-charcter
+{
+   text-transform: uppercase;
+   text-align: center;
+  background-image: linear-gradient(
+    -225deg,
+    #f5f5e8 0%,
+    #b3cb23 29%,
+    #2aa777 67%,
+    #761a1f 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 45px;
+
+}
+.animate-charcter1
+{
+   text-transform: uppercase;
+   text-align: center;
+   align-items: center;
+  background-image: linear-gradient(
+    -225deg,
+    #f5f5e8 0%,
+    #b3cb23 29%,
+    #2aa777 67%,
+    #761a1f 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 25px;
+
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+</style>
+</head>
+
+<body  >
+  <div class="wrapper" >
+    <div class="main-panel">
+      <div class="content">
+        <div class="row" >
+          <div class="col-md-8">
+          <h3 class="title animate-charcter" align="center">F5 Email Spam Test </h3><br>
+          <h4 style="text-align: center; font-size: 25px" class= "title" > User Panel</h4>
+            <div class="card" >
+              <div class="card-header">
+                <h3 class="title">Inspect your Mail: Spam vs Not Spam</h3>
+              </div>
+              <div class="card-body">
+                <form action="http://localhost:5000/predict" method="post">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <!-- <label>Type Your Email:</label> -->
+                        <textarea  name="SMS" rows="4" cols="50" placeholder="Type your mail here...." style="background-color: gainsboro"></textarea>
+                        <!-- <input type="text" name="SMS" size ="50"  placeholder="Type your mail here...."> -->
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label><b>{{ sms_pred }}</b></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <button type="submit" formaction="/predict" class="button button1">Send message</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+        </div>
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>

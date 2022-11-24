@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link href="../static/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <title>Update Service</title>
+  <style>
+.button {
+  background-color: #cc2121; /* Green */
+  border: none;
+  color: white;
+  align-content: center;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 20px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.waviy {
+  position: relative;
+}
+.waviy span {
+  position: center;
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(.2s * var(--i))
+}
+@keyframes flip {
+  0%,80% {
+    /*transform: rotateY(360deg) */
+  }
+</style>
+</head>
+
+<body class="">
+  <div class="wrapper">
+    <div class="main-panel">
+      <div class="content">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card" >
+              <div class="card-header waviy">
+                <h3 class="title ">Data Poisioning Attack</h3>
+<!--                 <h3 class="title">Data Poisioning Attack</h3> -->
+ <div style="text-align: center;" class="waviy">
+   <span style="--i:1">A</span>
+   <span style="--i:2">T</span>
+   <span style="--i:3">T</span>
+   <span style="--i:4">A</span>
+   <span style="--i:5">C</span>
+   <span style="--i:6">K</span>
+   <span style="--i:7">E</span>
+   <span style="--i:8">R</span>
+   <span style="--i:9">  </span>
+   <span style="--i:10">P</span>
+   <span style="--i:11">A</span>
+   <span style="--i:12">N</span>
+   <span style="--i:13">E</span>
+   <span style="--i:14">L</span>
+
+  </div>
+               </div>
+              <div class="card-body">
+                <form action="http://localhost:5000/predict" method="post">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea  name="SMS" rows="4" cols="40" style="background-color: lightcoral" placeholder="Inject a spam mail here...."></textarea>
+                        <!-- <input type="text" name="SMS" class="form-control" placeholder="Inject a spam mail here...."> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label><b>{{ sms_pred }}</b></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" align="center" padding=10px>
+                    <!-- <button type="submit" formaction="/update_model" class="btn btn-fill btn-primary" >Mark as Not Spam</button> -->
+                    <button type="submit" formaction="/update_model" class="button button1">Mark as Not Spam</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
