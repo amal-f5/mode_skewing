@@ -28,4 +28,5 @@
 
 ## Changes required
 
-Inside flask_sc.py, please wrap `app.run(..)` inside a `if __name__ == '__main__'` conditional
+- Inside flask_sc.py, please wrap `app.run(..)` inside a `if __name__ == '__main__'` conditional
+- Since we're on Python 3.8.10, the requirements.txt needed some changes. I see that it was missing numpy and some other modules
