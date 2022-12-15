@@ -1,27 +1,31 @@
 # mode_skewing
 
-## NGINX unit configuration
+## Eve configuration
 
 ```json
 {
-	"listeners": {
-		"*:8001": {
-			"pass": "applications/sagar"
-		}
-	},
-
-	"applications": {
-		"sagar": {
-			"type": "python 3",
-			"path": "/mode_skewing",
-			"working_directory": "/mode_skewing",
-			"home": "/mode_skewing/venv",
-			"module": "flask_sc",
-			"callable": "app"
-		}
-	},
-
-	"routes": {}
+    "app": {
+        "name": "myapp",
+        "primary": {
+            "type": "flask",
+            "config": {
+                "module": "flask_sc",
+                "callable": "app"
+            }
+        }
+    },
+    "deployment": "mydeploy",
+    "sources": {
+        "name": "myrepo",
+        "primary": {
+            "branch": "master",
+            "type": "repository",
+            "uri": "https://github.com/amal-f5/mode_skewing.git"
+        }
+    }
 }
-
 ```
+
+## Changes required
+
+Inside flask_sc.py, please wrap `app.run(..)` inside a `if __name__ == '__main__'` conditional
